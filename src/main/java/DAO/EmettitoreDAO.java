@@ -1,6 +1,6 @@
-package it.epicode.be.dao;
+package DAO;
 
-import it.epicode.be.entities.Emettitore;
+import it.be.epicode.Entities.Emettitore;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;

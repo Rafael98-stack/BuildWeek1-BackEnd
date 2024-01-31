@@ -1,8 +1,8 @@
 package DAO;
 
-import it.epicode.be.entities.Distributore;
-import it.epicode.be.entities.DocumentoViaggio;
-import it.epicode.be.entities.Rivenditore;
+import it.be.epicode.Entities.Distributore;
+import it.be.epicode.Entities.DocumentoViaggio;
+import it.be.epicode.Entities.Rivenditore;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;

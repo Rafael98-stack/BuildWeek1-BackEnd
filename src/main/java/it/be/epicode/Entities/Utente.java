@@ -8,7 +8,6 @@ import java.util.List;
 @Entity
 public class Utente {
 
-
     @Id
     @GeneratedValue
     @Column(name = "utente_id")
@@ -74,10 +73,12 @@ public class Utente {
         return tessera;
     }
 
-    public void setTessera(Tessera tessera) {
-        this.tessera = tessera;
-    }
-
+//    public void setTessera( Tessera tessera) {
+//        this.tessera = tessera;
+//    }
+public Tessera setTessera(Tessera tessera) {
+        return this.tessera;
+}
     public List<Biglietto> getBiglietti() {
         return biglietti;
     }

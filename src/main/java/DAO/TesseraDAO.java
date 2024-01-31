@@ -1,6 +1,6 @@
-package it.epicode.be.dao;
+package DAO;
 
-import it.epicode.be.entities.Tessera;
+import it.be.epicode.Entities.Tessera;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
