@@ -2,7 +2,7 @@ package it.be.epicode.Entities.TrasportoPubblico;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @DiscriminatorValue("auto-bus")
@@ -18,7 +18,7 @@ public class Auto_Bus extends Mezzo {
 
     public Auto_Bus() {}
 
-    public Auto_Bus(String partenza, String capolinea, long tempoMedioPercorso, boolean inServizio, LocalDate dataInizioManutenzione, LocalDate dataFineManutenzione, LocalDate dataInizioServizio, LocalDate dataFineServizio, String nomeVeicolo, String targa, int capienzaAttuale) {
+    public Auto_Bus(String partenza, String capolinea, long tempoMedioPercorso, boolean inServizio, Date dataInizioManutenzione, Date dataFineManutenzione, Date dataInizioServizio, Date dataFineServizio, String nomeVeicolo, String targa, int capienzaAttuale) {
         super(partenza, capolinea, tempoMedioPercorso, inServizio, dataInizioManutenzione, dataFineManutenzione, dataInizioServizio, dataFineServizio);
         this.nomeVeicolo = nomeVeicolo;
         this.targa = targa;

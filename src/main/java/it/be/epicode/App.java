@@ -49,10 +49,10 @@ TrattaDAO trattaDAO = new TrattaDAO(em);
 
 
 
-      Auto_Bus autoBus1 = new Auto_Bus("Termini","Eur_PalaSport",45,true,0,0,new Date(2000),new Date(2000),"714","AA555AA",40);
+      Auto_Bus autoBus1 = new Auto_Bus("Termini","Eur_PalaSport",45,true,new Date(2000),new Date(2000),new Date(2000),new Date(2000),"714","AA555AA",40);
       System.out.println(autoBus1);
 
-      autoBus1.setInServizioInManutenzione("Dicembre",2024);
+      autoBus1.setInServizioInManutenzione("Dicembre",124);
         System.out.println(autoBus1.getDataFineServizio());
       trattaDAO.save(autoBus1);
 
