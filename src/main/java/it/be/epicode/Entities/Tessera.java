@@ -1,5 +1,5 @@
 package it.be.epicode.Entities;
-
+import it.be.epicode.Entities.Utente;
 import javax.persistence.*;
 import java.time.LocalDate;
 
