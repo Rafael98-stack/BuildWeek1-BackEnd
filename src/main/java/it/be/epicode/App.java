@@ -3,8 +3,8 @@ package it.be.epicode;
 import DAO.*;
 import com.github.javafaker.Faker;
 import it.be.epicode.Entities.*;
-import it.be.epicode.Entities.TrasportoPubblico.*;
-import it.be.epicode.Entities.TrasportoPubblico.TipologiaTrasporto;
+import it.be.epicode.Entities.TrasportoPubblico.Auto_Bus;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -13,7 +13,6 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
-import java.util.function.Supplier;
 
 public class App {
 
@@ -50,9 +49,12 @@ TrattaDAO trattaDAO = new TrattaDAO(em);
 
 
 
-      Auto_Bus autoBus1 = new Auto_Bus("Termini","Eur_PalaSport",45,true,new Date(0),new Date(0),new Date(0),new Date(0),"714","AA555AA",40);
+      Auto_Bus autoBus1 = new Auto_Bus("Termini","Eur_PalaSport",45,true,0,0,new Date(2000),new Date(2000),"714","AA555AA",40);
       System.out.println(autoBus1);
-//      trattaDAO.save(autoBus1);
+
+      autoBus1.setInServizioInManutenzione("Dicembre",2024);
+        System.out.println(autoBus1.getDataFineServizio());
+      trattaDAO.save(autoBus1);
 
       // ******************** SALVATAGGIO UTENTI ************************
 
