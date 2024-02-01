@@ -53,9 +53,9 @@ TrattaDAO trattaDAO = new TrattaDAO(em);
       Auto_Bus autoBus1 = new Auto_Bus("Termini","Eur_PalaSport",45,true,new Date(2000),new Date(2000),new Date(2000),new Date(2000),"714","AA555AA",40);
       System.out.println(autoBus1);
 
-      autoBus1.setInServizioInManutenzione(MESI.GENNAIO,124);
+      autoBus1.setInServizioInManutenzione(MESI.FEBBRAIO,2024);
         System.out.println(autoBus1.getDataFineServizio());
-//      trattaDAO.save(autoBus1);
+      trattaDAO.save(autoBus1);
 
       // ******************** SALVATAGGIO UTENTI ************************
 
