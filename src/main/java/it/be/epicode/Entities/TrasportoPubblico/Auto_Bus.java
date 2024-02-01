@@ -8,8 +8,8 @@ import java.util.Date;
 @DiscriminatorValue("auto-bus")
 public class Auto_Bus extends Mezzo {
     private String nomeVeicolo;
-    private TipologiaTrasporto tipologiaTrasporto= TipologiaTrasporto.AUTO_BUS;
 
+    private String tipologiaTrasporto = TipologiaTrasporto.AUTO_BUS.toString();
     private String targa;
 
     private int capienzaEffettiva = 40;
@@ -33,11 +33,11 @@ public class Auto_Bus extends Mezzo {
         this.nomeVeicolo = nomeVeicolo;
     }
 
-    public TipologiaTrasporto getTipologiaTrasporto() {
+    public String  getTipologiaTrasporto() {
         return tipologiaTrasporto;
     }
 
-    public void setTipologiaTrasporto(TipologiaTrasporto tipologiaTrasporto) {
+    public void setTipologiaTrasporto(String tipologiaTrasporto) {
         this.tipologiaTrasporto = tipologiaTrasporto;
     }
 

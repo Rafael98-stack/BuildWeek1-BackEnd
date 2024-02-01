@@ -11,7 +11,7 @@ import java.util.Date;
 public abstract class Mezzo extends Tratta {
 
 private boolean inServizio;
-private MESI mesi;
+private String mesi;
      private Date dataInizioManutenzione;
 
     private Date dataFineManutenzione;
@@ -85,7 +85,7 @@ private MESI mesi;
         int giornoIS = 0;
         int meseFS = 0;
         int giornoFS = 0;
-
+this.mesi = mesi.toString();
         switch (mesi) {
             case GENNAIO:
       meseIM = 0;
@@ -257,6 +257,8 @@ this.dataInizioManutenzione = new Date(annoDeBug,meseIM,giornoIM);
                 break;
         }
     }
+
+
     @Override
     public String toString() {
         return "Mezzo{" +

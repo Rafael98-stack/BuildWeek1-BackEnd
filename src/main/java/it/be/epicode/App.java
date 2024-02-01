@@ -5,6 +5,7 @@ import com.github.javafaker.Faker;
 import it.be.epicode.Entities.*;
 import it.be.epicode.Entities.TrasportoPubblico.Auto_Bus;
 import it.be.epicode.Entities.TrasportoPubblico.MESI;
+import it.be.epicode.Entities.TrasportoPubblico.TERMINI_PALASPORT;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -50,12 +51,18 @@ TrattaDAO trattaDAO = new TrattaDAO(em);
 
 
 
-      Auto_Bus autoBus1 = new Auto_Bus("Termini","Eur_PalaSport",45,true,new Date(2000),new Date(2000),new Date(2000),new Date(2000),"714","AA555AA",40);
+      Auto_Bus autoBus1 = new Auto_Bus("","",0,true,new Date(0),new Date(0),new Date(0),new Date(0),"714","AA555AA",40);
       System.out.println(autoBus1);
 
       autoBus1.setInServizioInManutenzione(MESI.FEBBRAIO,2024);
+      autoBus1.setPercorsoTempoMedio(TERMINI_PALASPORT.TERME_CARACALLA,TERMINI_PALASPORT.EUR_PALASPORT);
+      System.out.println(autoBus1.getCapienzaAttuale());
+        System.out.println(autoBus1.getDataInizioServizio());
         System.out.println(autoBus1.getDataFineServizio());
-      trattaDAO.save(autoBus1);
+        System.out.println(autoBus1.getDataInizioManutenzione());
+        System.out.println(autoBus1.getDataFineManutenzione());
+        System.out.println(autoBus1.getTempoMedioPercorso());
+//      trattaDAO.save(autoBus1);
 
       // ******************** SALVATAGGIO UTENTI ************************
 
@@ -117,7 +124,7 @@ TrattaDAO trattaDAO = new TrattaDAO(em);
       System.out.println("Da distributori automatici: " + documentoViaggioDAO.numeroTotaleAbbonamentiByDistributore(LocalDate.of(2022, 12, 30), LocalDate.of(2024, 02, 26), distributore1));
       System.out.println("Da rivenditori autorizzati: " + documentoViaggioDAO.numeroTotaleAbbonamentiByRivenditore(LocalDate.of(2022, 12, 30), LocalDate.of(2024, 02, 26), rivenditore1));
 
-
+///
 
 
       em.close();

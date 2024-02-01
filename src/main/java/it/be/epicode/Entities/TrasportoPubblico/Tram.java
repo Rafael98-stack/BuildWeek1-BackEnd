@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 @DiscriminatorValue("tram")
 public class Tram extends Mezzo {
     private String nomeVeicolo;
-    private TipologiaTrasporto tipologiaTrasporto= TipologiaTrasporto.TRAM;
+    private String tipologiaTrasporto= TipologiaTrasporto.TRAM.toString();
 
     public Tram() {
     }
@@ -24,11 +24,11 @@ public class Tram extends Mezzo {
         this.nomeVeicolo = nomeVeicolo;
     }
 
-    public TipologiaTrasporto getTipologiaTrasporto() {
+    public String getTipologiaTrasporto() {
         return tipologiaTrasporto;
     }
 
-    public void setTipologiaTrasporto(TipologiaTrasporto tipologiaTrasporto) {
+    public void setTipologiaTrasporto(String  tipologiaTrasporto) {
         this.tipologiaTrasporto = tipologiaTrasporto;
     }
 
