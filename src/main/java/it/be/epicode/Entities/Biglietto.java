@@ -15,5 +15,17 @@ public class Biglietto extends DocumentoViaggio {
         super(dataEmissione, prezzo, emettitore, utente);
     }
 
+    public void annullaBiglietto() {
+        if (!isAnnullato()) {
+            setAnnullato(true);
+        }
+    }
+
+    public void vidimaBiglietto() {
+        if (!isAnnullato() && getDataVidimazione() == null) {
+            setAnnullato(true);
+            setDataVidimazione(LocalDate.now());
+        }
+    }
 
 }

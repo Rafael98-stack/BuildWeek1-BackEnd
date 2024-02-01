@@ -1,9 +1,13 @@
 package it.be.epicode.Entities.TrasportoPubblico;
 
+import it.be.epicode.Entities.Biglietto;
+
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "mezzo")
@@ -19,6 +23,23 @@ private boolean inServizio;
     private Date dataInizioServizio;
 
     private Date dataFineServizio;
+
+    List<Biglietto> bigliettiVidimati = new ArrayList<>();
+
+    public void vidimaBiglietti(Biglietto biglietto) {
+        biglietto.annullaBiglietto();
+
+        bigliettiVidimati.add(biglietto);
+    }
+
+    public int getNumeroBigliettiVidimati() {
+        return bigliettiVidimati.size();
+    }
+
+
+
+
+
 
     public Mezzo() {
     }
