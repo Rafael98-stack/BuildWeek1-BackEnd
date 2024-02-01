@@ -11,7 +11,7 @@ import java.util.Date;
 public abstract class Mezzo extends Tratta {
 
 private boolean inServizio;
-
+private MESI mesi;
      private Date dataInizioManutenzione;
 
     private Date dataFineManutenzione;
@@ -74,7 +74,7 @@ private boolean inServizio;
         this.dataFineServizio = dataFineServizio;
     }
 
-    public void setInServizioInManutenzione(String mese,int anno){
+    public void setInServizioInManutenzione(MESI mesi,int anno){
         int annoSeguente = anno + 1;
         int meseIM = 0;
         int giornoIM = 0;
@@ -85,8 +85,8 @@ private boolean inServizio;
         int meseFS = 0;
         int giornoFS = 0;
 
-        switch (mese) {
-            case "Gennaio" :
+        switch (mesi) {
+            case GENNAIO:
       meseIM = 0;
       giornoIM = 1;
       meseFM = meseIM;
@@ -100,7 +100,7 @@ this.dataInizioManutenzione = new Date(anno,meseIM,giornoIM);
                 this.dataInizioServizio = new Date(anno,meseIS,giornoIS);
                 this.dataFineServizio = new Date(annoSeguente,meseFS,giornoFS);
                 break;
-            case "Febbraio":
+            case FEBBRAIO:
                 meseIM = 1;
                 giornoIM = 1;
                 meseFM = meseIM;
@@ -114,7 +114,7 @@ this.dataInizioManutenzione = new Date(anno,meseIM,giornoIM);
                 this.dataInizioServizio = new Date(anno,meseIS,giornoIS);
                 this.dataFineServizio = new Date(annoSeguente,meseFS,giornoFS);
             break;
-            case "Marzo":
+            case MARZO:
                 meseIM = 2;
                 giornoIM = 1;
                 meseFM = meseIM;
@@ -128,7 +128,7 @@ this.dataInizioManutenzione = new Date(anno,meseIM,giornoIM);
                 this.dataInizioServizio = new Date(anno,meseIS,giornoIS);
                 this.dataFineServizio = new Date(annoSeguente,meseFS,giornoFS);
                 break;
-            case "Aprile":
+            case APRILE:
                 meseIM = 3;
                 giornoIM = 1;
                 meseFM = meseIM;
@@ -142,7 +142,7 @@ this.dataInizioManutenzione = new Date(anno,meseIM,giornoIM);
                 this.dataInizioServizio = new Date(anno,meseIS,giornoIS);
                 this.dataFineServizio = new Date(annoSeguente,meseFS,giornoFS);
                 break;
-            case "Maggio":
+            case MAGGIO:
                 meseIM = 4;
                 giornoIM = 1;
                 meseFM = meseIM;
@@ -156,7 +156,7 @@ this.dataInizioManutenzione = new Date(anno,meseIM,giornoIM);
                 this.dataInizioServizio = new Date(anno,meseIS,giornoIS);
                 this.dataFineServizio = new Date(annoSeguente,meseFS,giornoFS);
                 break;
-            case "Giugno":
+            case GIUGNO:
                 meseIM = 5;
                 giornoIM = 1;
                 meseFM = meseIM;
@@ -170,7 +170,7 @@ this.dataInizioManutenzione = new Date(anno,meseIM,giornoIM);
                 this.dataInizioServizio = new Date(anno,meseIS,giornoIS);
                 this.dataFineServizio = new Date(annoSeguente,meseFS,giornoFS);
                 break;
-            case "Luglio":
+            case LUGLIO:
                 meseIM = 6;
                 giornoIM = 1;
                 meseFM = meseIM;
@@ -184,7 +184,7 @@ this.dataInizioManutenzione = new Date(anno,meseIM,giornoIM);
                 this.dataInizioServizio = new Date(anno,meseIS,giornoIS);
                 this.dataFineServizio = new Date(annoSeguente,meseFS,giornoFS);
                 break;
-            case "Agosto":
+            case AGOSTO:
                 meseIM = 7;
                 giornoIM = 1;
                 meseFM = meseIM;
@@ -198,7 +198,7 @@ this.dataInizioManutenzione = new Date(anno,meseIM,giornoIM);
                 this.dataInizioServizio = new Date(anno,meseIS,giornoIS);
                 this.dataFineServizio = new Date(annoSeguente,meseFS,giornoFS);
                 break;
-            case "Settembre":
+            case SETTEMBRE:
                 meseIM = 8;
                 giornoIM = 1;
                 meseFM = meseIM;
@@ -212,7 +212,7 @@ this.dataInizioManutenzione = new Date(anno,meseIM,giornoIM);
                 this.dataInizioServizio = new Date(anno,meseIS,giornoIS);
                 this.dataFineServizio = new Date(annoSeguente,meseFS,giornoFS);
                 break;
-            case "Ottobre":
+            case OTTOBRE:
                 meseIM = 9;
                 giornoIM = 1;
                 meseFM = meseIM;
@@ -226,7 +226,7 @@ this.dataInizioManutenzione = new Date(anno,meseIM,giornoIM);
                 this.dataInizioServizio = new Date(anno,meseIS,giornoIS);
                 this.dataFineServizio = new Date(annoSeguente,meseFS,giornoFS);
                 break;
-            case "Novembre":
+            case NOVEMBRE:
                 meseIM = 10;
                 giornoIM = 1;
                 meseFM = meseIM;
@@ -240,7 +240,7 @@ this.dataInizioManutenzione = new Date(anno,meseIM,giornoIM);
                 this.dataInizioServizio = new Date(anno,meseIS,giornoIS);
                 this.dataFineServizio = new Date(annoSeguente,meseFS,giornoFS);
                 break;
-            case "Dicembre":
+            case DICEMBRE:
                 meseIM = 11;
                 giornoIM = 1;
                 meseFM = meseIM;
