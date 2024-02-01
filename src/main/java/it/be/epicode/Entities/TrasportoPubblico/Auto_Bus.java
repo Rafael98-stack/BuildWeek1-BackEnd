@@ -2,8 +2,8 @@ package it.be.epicode.Entities.TrasportoPubblico;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import java.time.LocalDate;
 import java.util.Date;
+import java.util.Random;
 
 @Entity
 @DiscriminatorValue("auto-bus")
@@ -18,13 +18,16 @@ public class Auto_Bus extends Mezzo {
     private int capienzaAttuale;
 
 
-    public Auto_Bus() {}
+    public Auto_Bus() {
+        generaNuovaTarga();
+    }
 
     public Auto_Bus(String partenza, String capolinea, long tempoMedioPercorso, boolean inServizio, Date dataInizioManutenzione, Date dataFineManutenzione, Date dataInizioServizio, Date dataFineServizio, String nomeVeicolo, String targa, int capienzaAttuale) {
         super(partenza, capolinea, tempoMedioPercorso, inServizio, dataInizioManutenzione, dataFineManutenzione, dataInizioServizio, dataFineServizio);
         this.nomeVeicolo = nomeVeicolo;
         this.targa = targa;
         this.capienzaAttuale = capienzaAttuale;
+        generaNuovaTarga();
     }
 
     public String getNomeVeicolo() {
@@ -59,6 +62,21 @@ public class Auto_Bus extends Mezzo {
         this.capienzaAttuale = capienzaAttuale;
     }
 
+    public String getTarga() {
+        return targa;
+    }
+     private void generaNuovaTarga() {
+        String caratteri = "ABCDEFGHIJKLMNORSPQWXYZ0123456789";
+        StringBuilder targaGenerata = new StringBuilder();
+        int lunghezzaTarga = 8;
+        Random random = new Random();
+        for (int i = 0; i < lunghezzaTarga; i ++ ) {
+            int indice = random.nextInt(caratteri.length());
+            targaGenerata.append(caratteri.charAt(indice));
+    }
+        this.targa = targaGenerata.toString();
+    }
+
     @Override
     public String toString() {
         return "Auto_Bus{" +
@@ -66,6 +84,7 @@ public class Auto_Bus extends Mezzo {
                 ", tipologiaTrasporto=" + tipologiaTrasporto +
                 ", capienzaEffettiva=" + capienzaEffettiva +
                 ", capienzaAttuale=" + capienzaAttuale +
+                ", targa='" + targa + '\'' +
                 '}';
     }
 }
