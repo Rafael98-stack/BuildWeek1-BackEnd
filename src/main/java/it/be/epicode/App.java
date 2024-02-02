@@ -1,6 +1,6 @@
 package it.be.epicode;
 
-import DAO.TrattaDAO;
+import ILMIODAO.TrattaDAO;
 import com.github.javafaker.Faker;
 import it.be.epicode.Entities.TrasportoPubblico.Auto_Bus;
 import it.be.epicode.Entities.TrasportoPubblico.MESI;
