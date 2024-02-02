@@ -1,6 +1,8 @@
 package it.be.epicode.Entities.TrasportoPubblico;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
+
 
 @Entity
 @Table(name="tratta")
@@ -14,6 +16,9 @@ private Long Id;
 private String capolinea;
 
 private long tempoMedioPercorso;
+    private LocalDateTime timestamp;
+
+
 
     public Tratta() {
     }
@@ -23,6 +28,8 @@ private long tempoMedioPercorso;
         this.capolinea = capolinea;
         this.tempoMedioPercorso = tempoMedioPercorso;
     }
+
+
 
     public Long getId() {
         return Id;
@@ -55,6 +62,8 @@ private long tempoMedioPercorso;
     public void setTempoMedioPercorso(long tempoMedioPercorso) {
         this.tempoMedioPercorso = tempoMedioPercorso;
     }
+
+
 
     @Override
     public String toString() {

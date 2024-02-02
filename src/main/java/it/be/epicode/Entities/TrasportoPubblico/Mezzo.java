@@ -2,9 +2,7 @@ package it.be.epicode.Entities.TrasportoPubblico;
 
 import it.be.epicode.Entities.Biglietto;
 
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -24,7 +22,15 @@ private boolean inServizio;
 
     private Date dataFineServizio;
 
-    List<Biglietto> bigliettiVidimati = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "tratta_id")
+    private Tratta tratta;
+
+
+
+
+    @OneToMany(mappedBy = "mezzo")
+    private List<Biglietto> bigliettiVidimati = new ArrayList<>();
 
     public void vidimaBiglietti(Biglietto biglietto) {
         biglietto.annullaBiglietto();

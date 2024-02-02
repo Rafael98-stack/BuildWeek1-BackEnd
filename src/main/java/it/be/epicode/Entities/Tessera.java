@@ -1,10 +1,10 @@
 package it.be.epicode.Entities;
-import it.be.epicode.Entities.Utente;
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 public class Tessera {
+
     @Id
     @GeneratedValue
     @Column(name = "numero_tessera")
@@ -58,6 +58,19 @@ public class Tessera {
 
     public void setUtente(Utente utente) {
         this.utente = utente;
+    }
+
+    public boolean isTesseraValid(Tessera tessera) {
+        if (tessera != null) {
+            LocalDate dataAttuale = LocalDate.now();
+            if (dataAttuale.isAfter(tessera.getDataRinnovo()) && dataAttuale.isBefore(tessera.getDataScadenza())) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 
     @Override
