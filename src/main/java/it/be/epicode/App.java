@@ -4,7 +4,7 @@ import DAO.TrattaDAO;
 import com.github.javafaker.Faker;
 import it.be.epicode.Entities.TrasportoPubblico.Auto_Bus;
 import it.be.epicode.Entities.TrasportoPubblico.MESI;
-import it.be.epicode.Entities.TrasportoPubblico.PORTA_S.SANPAOLO_CASTEL_FUSANO;
+import it.be.epicode.Entities.TrasportoPubblico.SANPAOLO_CASTEL_FUSANO;
 import it.be.epicode.Entities.TrasportoPubblico.TERMINI_PALASPORT;
 import it.be.epicode.Entities.TrasportoPubblico.Tram;
 

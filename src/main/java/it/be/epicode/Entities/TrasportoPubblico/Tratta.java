@@ -1,7 +1,5 @@
 package it.be.epicode.Entities.TrasportoPubblico;
 
-import it.be.epicode.Entities.TrasportoPubblico.PORTA_S.SANPAOLO_CASTEL_FUSANO;
-
 import javax.persistence.*;
 
 @Entity
