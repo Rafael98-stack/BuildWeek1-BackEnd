@@ -72,7 +72,17 @@ public class Tram extends Mezzo {
         int randomCapienzaAttualeAutobus = random.nextInt(max - min) + min;
         return randomCapienzaAttualeAutobus;
     }
+    public String getRandomNome () {
+        int min = 1;
+        int max = 100;
+        Random random = new Random();
+        int randomInt = random.nextInt(max - min) + min;
+
+        String nome = getRandomAlfabeto().toString() + randomInt;
+        return nome;
+    }
     public void generazioneTarga(Tram tram){
+        this.nomeVeicolo = getRandomNome();
 this.capienzaAttuale = getRandomInt();
         int min = 100;
         int max = 999;

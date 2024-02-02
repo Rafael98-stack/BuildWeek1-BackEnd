@@ -21,7 +21,7 @@ public class Auto_Bus extends Mezzo {
 
     public Auto_Bus(String partenza, String capolinea, long tempoMedioPercorso, boolean inServizio, Date dataInizioManutenzione, Date dataFineManutenzione, Date dataInizioServizio, Date dataFineServizio, String nomeVeicolo, String targa, int capienzaAttuale) {
         super(partenza, capolinea, tempoMedioPercorso, inServizio, dataInizioManutenzione, dataFineManutenzione, dataInizioServizio, dataFineServizio);
-        this.nomeVeicolo = nomeVeicolo;
+       nomeVeicolo = this.nomeVeicolo;
         targa = this.targa;
         this.capienzaAttuale = capienzaAttuale;
     }
@@ -78,7 +78,17 @@ public class Auto_Bus extends Mezzo {
         return randomCapienzaAttualeAutobus;
     }
 
+    public String getRandomNome () {
+        int min = 1;
+        int max = 100;
+        Random random = new Random();
+        int randomInt = random.nextInt(max - min) + min;
+
+        String nome = getRandomAlfabeto().toString() + randomInt;
+        return nome;
+    }
 public void generazioneTarga(Auto_Bus auto_bus){
+        this.nomeVeicolo = getRandomNome();
 this.capienzaAttuale = getRandomInt();
     int min = 100;
     int max = 999;

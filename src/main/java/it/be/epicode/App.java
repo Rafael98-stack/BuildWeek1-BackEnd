@@ -57,32 +57,32 @@ TrattaDAO trattaDAO = new TrattaDAO(em);
 
 
 
-      Auto_Bus autoBus1 = new Auto_Bus("","",0,true,new Date(0),new Date(0),new Date(0),new Date(0),"714","", 0);
+      Auto_Bus autoBus1 = new Auto_Bus("","",0,true,new Date(0),new Date(0),new Date(0),new Date(0),"","", 0);
         autoBus1.setInServizioInManutenzione(MESI.GENNAIO,2024);
         autoBus1.setPercorsoTempoMedioAutoBus(TERMINI_PALASPORT.TERMINI,TERMINI_PALASPORT.EUR_PALASPORT);
         autoBus1.generazioneTarga(autoBus1);
 
-        Auto_Bus autoBus2 = new Auto_Bus("","",0,true,new Date(0),new Date(0),new Date(0),new Date(0),"16","", 0);
+        Auto_Bus autoBus2 = new Auto_Bus("","",0,true,new Date(0),new Date(0),new Date(0),new Date(0),"","", 0);
         autoBus2.setInServizioInManutenzione(MESI.FEBBRAIO,2024);
         autoBus2.setPercorsoTempoMedioAutoBus(TERMINI_PALASPORT.TERMINI,TERMINI_PALASPORT.NAVIGATORI);
         autoBus2.generazioneTarga(autoBus2);
 
-        Auto_Bus autoBus3 = new Auto_Bus("","",0,true,new Date(0),new Date(0),new Date(0),new Date(0),"10","", 0);
+        Auto_Bus autoBus3 = new Auto_Bus("","",0,true,new Date(0),new Date(0),new Date(0),new Date(0),"","", 0);
         autoBus3.setInServizioInManutenzione(MESI.DICEMBRE,2024);
         autoBus3.setPercorsoTempoMedioAutoBus(TERMINI_PALASPORT.LAURENTINA,TERMINI_PALASPORT.TERME_CARACALLA);
         autoBus3.generazioneTarga(autoBus3);
 
-        Tram tram1 = new Tram("","",0,true,new Date(0),new Date(0),new Date(0),new Date(0),"E9","", 0);
+        Tram tram1 = new Tram("","",0,true,new Date(0),new Date(0),new Date(0),new Date(0),"","", 0);
         tram1.setInServizioInManutenzione(MESI.LUGLIO,2024);
         tram1.setPercorsoTempoMedioTram(SANPAOLO_CASTEL_FUSANO.SAN_PAOLO,SANPAOLO_CASTEL_FUSANO.CASTEL_FUSANO);
         tram1.generazioneTarga(tram1);
 
-        Tram tram2 = new Tram("","",0,true,new Date(0),new Date(0),new Date(0),new Date(0),"C10","", 0);
+        Tram tram2 = new Tram("","",0,true,new Date(0),new Date(0),new Date(0),new Date(0),"","", 0);
         tram2.setInServizioInManutenzione(MESI.APRILE,2025);
         tram2.setPercorsoTempoMedioTram(SANPAOLO_CASTEL_FUSANO.CASTEL_FUSANO,SANPAOLO_CASTEL_FUSANO.SAN_PAOLO);
         tram2.generazioneTarga(tram2);
 
-        Tram tram3 = new Tram("","",0,true,new Date(0),new Date(0),new Date(0),new Date(0),"B21","", 0);
+        Tram tram3 = new Tram("","",0,true,new Date(0),new Date(0),new Date(0),new Date(0),"","", 0);
         tram3.setInServizioInManutenzione(MESI.MARZO,2026);
         tram3.setPercorsoTempoMedioTram(SANPAOLO_CASTEL_FUSANO.CASAL_BERNOCCHI,SANPAOLO_CASTEL_FUSANO.EUR_MAGLIANA);
         tram3.generazioneTarga(tram3);
@@ -94,7 +94,7 @@ TrattaDAO trattaDAO = new TrattaDAO(em);
         System.out.println(tram3.getDataInizioServizio());
         System.out.println(tram3.getDataFineServizio());
 
-//        trattaDAO.save(autoBus1);
+        trattaDAO.save(autoBus1);
 //        trattaDAO.save(autoBus2);
 //        trattaDAO.save(autoBus3);
 //
