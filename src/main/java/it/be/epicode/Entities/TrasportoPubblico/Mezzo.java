@@ -1,9 +1,11 @@
 package it.be.epicode.Entities.TrasportoPubblico;
 
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import it.be.epicode.Entities.Biglietto;
+
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "mezzo")
@@ -19,6 +21,31 @@ public abstract class Mezzo extends Tratta {
     private Date dataInizioServizio;
 
     private Date dataFineServizio;
+
+    @ManyToOne
+    @JoinColumn(name = "tratta_id")
+    private Tratta tratta;
+
+
+
+
+    @OneToMany(mappedBy = "mezzo")
+    private List<Biglietto> bigliettiVidimati = new ArrayList<>();
+
+    public void vidimaBiglietti(Biglietto biglietto) {
+        biglietto.annullaBiglietto();
+
+        bigliettiVidimati.add(biglietto);
+    }
+
+    public int getNumeroBigliettiVidimati() {
+        return bigliettiVidimati.size();
+    }
+
+
+
+
+
 
     public Mezzo() {
     }

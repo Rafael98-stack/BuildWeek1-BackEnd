@@ -44,8 +44,30 @@ public abstract class DocumentoViaggio {
     @ManyToOne
     @JoinColumn(name = "utente_id")
     private Utente utente;
+    @Column(name = "annullato")
+    private boolean annullato;
 
-    public DocumentoViaggio(){}
+    public DocumentoViaggio(){
+        this.annullato = false;
+    }
+    public boolean isAnnullato() {
+        return annullato;
+    }
+
+    public void setAnnullato(boolean annullato) {
+        this.annullato = annullato;
+    }
+    @Column(name = "data_vidimazione")
+    private LocalDate dataVidimazione;
+
+
+    public LocalDate getDataVidimazione() {
+        return dataVidimazione;
+    }
+
+    public void setDataVidimazione(LocalDate dataVidimazione) {
+        this.dataVidimazione = dataVidimazione;
+    }
 
     public DocumentoViaggio(LocalDate dataEmissione, double prezzo, Emettitore emettitore, Utente utente) {
         this.dataEmissione = dataEmissione;
