@@ -4,7 +4,6 @@ import it.be.epicode.Entities.TrasportoPubblico.Tratta;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-
 public class TrattaDAO {
     private EntityManager em;
 

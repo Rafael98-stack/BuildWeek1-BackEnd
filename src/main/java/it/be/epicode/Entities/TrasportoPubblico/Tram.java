@@ -83,7 +83,7 @@ public class Tram extends Mezzo {
     }
     public void generazioneTarga(Tram tram){
         this.nomeVeicolo = getRandomNome();
-this.capienzaAttuale = getRandomInt();
+        this.capienzaAttuale = getRandomInt();
         int min = 100;
         int max = 999;
         Random random = new Random();
@@ -114,3 +114,4 @@ this.capienzaAttuale = getRandomInt();
                 '}';
     }
 }
+

@@ -7,20 +7,20 @@ import javax.persistence.*;
 @DiscriminatorColumn(name = "tratta")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Tratta {
-@Id
+    @Id
     @GeneratedValue
-private Long Id;
+    private Long Id;
     private String partenza;
-private String capolinea;
+    private String capolinea;
 
-private long tempoMedioPercorso;
+    private long tempoMedioPercorso;
 
     public Tratta() {
     }
 
     public Tratta(String partenza, String capolinea, long tempoMedioPercorso) {
         partenza = this.partenza;
-       capolinea = this.capolinea;
+        capolinea = this.capolinea;
         tempoMedioPercorso = this.tempoMedioPercorso;
     }
 
@@ -57,7 +57,7 @@ private long tempoMedioPercorso;
     }
 
     public void setPercorsoTempoMedioAutoBus(TERMINI_PALASPORT partenza,TERMINI_PALASPORT capolinea){
-String inizio1 = "TERMINI";
+        String inizio1 = "TERMINI";
         String inizio2 = "TERME_CARACALLA";
         String inizio3 = "NAVIGATORI";
         String inizio4 = "LAURENTINA";
@@ -73,133 +73,133 @@ String inizio1 = "TERMINI";
         int posizioneSuccessiva = 10;
 
 
-    switch (partenza){
-        case TERMINI:
-            switch (capolinea){
-                case TERMINI:
-                    this.capolinea = fine1;
-                    this.tempoMedioPercorso = posizioneAttuale;
-                    break;
-                case TERME_CARACALLA:
-                    this.capolinea = fine2;
-                    this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
-                    break;
-                case NAVIGATORI:
-                    this.capolinea = fine3;
-                    this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 2;
-                    break;
-                case LAURENTINA:
-                    this.capolinea = fine4;
-                    this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 3;
-                    break;
-                case EUR_PALASPORT:
-                    this.capolinea = fine5;
-                    this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 4;
-                    break;
-            }
-            this.partenza=inizio1;
-            break;
-        case TERME_CARACALLA:
-            switch (capolinea){
-                case TERMINI:
-                    this.capolinea = fine1;
-                    this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
-                    break;
-                case TERME_CARACALLA:
-                    this.capolinea = fine2;
-                    this.tempoMedioPercorso = posizioneAttuale;
-                    break;
-                case NAVIGATORI:
-                    this.capolinea = fine3;
-                    this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
-                    break;
-                case LAURENTINA:
-                    this.capolinea = fine4;
-                    this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 2;
-                    break;
-                case EUR_PALASPORT:
-                    this.capolinea = fine5;
-                    this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 3;
-                    break;
-            }
-            this.partenza=inizio2;
-            break;
-        case NAVIGATORI:
-            switch (capolinea){
-                case TERMINI:
-                    this.capolinea = fine1;
-                    this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 2;
-                    break;
-                case TERME_CARACALLA:
-                    this.capolinea = fine2;
-                    this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
-                    break;
-                case NAVIGATORI:
-                    this.capolinea = fine3;
-                    this.tempoMedioPercorso = posizioneAttuale;
-                    break;
-                case LAURENTINA:
-                    this.capolinea = fine4;
-                    this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
-                    break;
-                case EUR_PALASPORT:
-                    this.capolinea = fine5;
-                    this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 2;
-                    break;
-            }
-            this.partenza=inizio3;
-            break;
-        case LAURENTINA:
-            switch (capolinea){
-                case TERMINI:
-                    this.capolinea = fine1;
-                    this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 3;
-                    break;
-                case TERME_CARACALLA:
-                    this.capolinea = fine2;
-                    this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 2;
-                    break;
-                case NAVIGATORI:
-                    this.capolinea = fine3;
-                    this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
-                    break;
-                case LAURENTINA:
-                    this.capolinea = fine4;
-                    this.tempoMedioPercorso = posizioneAttuale;
-                    break;
-                case EUR_PALASPORT:
-                    this.capolinea = fine5;
-                    this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
-                    break;
-            }
-            this.partenza=inizio4;
-            break;
-        case EUR_PALASPORT:
-            switch (capolinea){
-                case TERMINI:
-                    this.capolinea = fine1;
-                    this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 4;
-                    break;
-                case TERME_CARACALLA:
-                    this.capolinea = fine2;
-                    this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 3;
-                    break;
-                case NAVIGATORI:
-                    this.capolinea = fine3;
-                    this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 2;
-                    break;
-                case LAURENTINA:
-                    this.capolinea = fine4;
-                    this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
-                    break;
-                case EUR_PALASPORT:
-                    this.capolinea = fine5;
-                    this.tempoMedioPercorso = posizioneAttuale;
-                    break;
-            }
-            this.partenza=inizio5;
-            break;
-    }
+        switch (partenza){
+            case TERMINI:
+                switch (capolinea){
+                    case TERMINI:
+                        this.capolinea = fine1;
+                        this.tempoMedioPercorso = posizioneAttuale;
+                        break;
+                    case TERME_CARACALLA:
+                        this.capolinea = fine2;
+                        this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
+                        break;
+                    case NAVIGATORI:
+                        this.capolinea = fine3;
+                        this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 2;
+                        break;
+                    case LAURENTINA:
+                        this.capolinea = fine4;
+                        this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 3;
+                        break;
+                    case EUR_PALASPORT:
+                        this.capolinea = fine5;
+                        this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 4;
+                        break;
+                }
+                this.partenza=inizio1;
+                break;
+            case TERME_CARACALLA:
+                switch (capolinea){
+                    case TERMINI:
+                        this.capolinea = fine1;
+                        this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
+                        break;
+                    case TERME_CARACALLA:
+                        this.capolinea = fine2;
+                        this.tempoMedioPercorso = posizioneAttuale;
+                        break;
+                    case NAVIGATORI:
+                        this.capolinea = fine3;
+                        this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
+                        break;
+                    case LAURENTINA:
+                        this.capolinea = fine4;
+                        this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 2;
+                        break;
+                    case EUR_PALASPORT:
+                        this.capolinea = fine5;
+                        this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 3;
+                        break;
+                }
+                this.partenza=inizio2;
+                break;
+            case NAVIGATORI:
+                switch (capolinea){
+                    case TERMINI:
+                        this.capolinea = fine1;
+                        this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 2;
+                        break;
+                    case TERME_CARACALLA:
+                        this.capolinea = fine2;
+                        this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
+                        break;
+                    case NAVIGATORI:
+                        this.capolinea = fine3;
+                        this.tempoMedioPercorso = posizioneAttuale;
+                        break;
+                    case LAURENTINA:
+                        this.capolinea = fine4;
+                        this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
+                        break;
+                    case EUR_PALASPORT:
+                        this.capolinea = fine5;
+                        this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 2;
+                        break;
+                }
+                this.partenza=inizio3;
+                break;
+            case LAURENTINA:
+                switch (capolinea){
+                    case TERMINI:
+                        this.capolinea = fine1;
+                        this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 3;
+                        break;
+                    case TERME_CARACALLA:
+                        this.capolinea = fine2;
+                        this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 2;
+                        break;
+                    case NAVIGATORI:
+                        this.capolinea = fine3;
+                        this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
+                        break;
+                    case LAURENTINA:
+                        this.capolinea = fine4;
+                        this.tempoMedioPercorso = posizioneAttuale;
+                        break;
+                    case EUR_PALASPORT:
+                        this.capolinea = fine5;
+                        this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
+                        break;
+                }
+                this.partenza=inizio4;
+                break;
+            case EUR_PALASPORT:
+                switch (capolinea){
+                    case TERMINI:
+                        this.capolinea = fine1;
+                        this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 4;
+                        break;
+                    case TERME_CARACALLA:
+                        this.capolinea = fine2;
+                        this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 3;
+                        break;
+                    case NAVIGATORI:
+                        this.capolinea = fine3;
+                        this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 2;
+                        break;
+                    case LAURENTINA:
+                        this.capolinea = fine4;
+                        this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
+                        break;
+                    case EUR_PALASPORT:
+                        this.capolinea = fine5;
+                        this.tempoMedioPercorso = posizioneAttuale;
+                        break;
+                }
+                this.partenza=inizio5;
+                break;
+        }
     }
 
     public void setPercorsoTempoMedioTram(SANPAOLO_CASTEL_FUSANO partenza, SANPAOLO_CASTEL_FUSANO capolinea){
@@ -247,19 +247,19 @@ String inizio1 = "TERMINI";
                 break;
             case EUR_MAGLIANA:
                 switch (capolinea){
-          case SAN_PAOLO:                        this.capolinea = fine1;
+                    case SAN_PAOLO:                        this.capolinea = fine1;
                         this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
                         break;
-      case EUR_MAGLIANA:                        this.capolinea = fine2;
+                    case EUR_MAGLIANA:                        this.capolinea = fine2;
                         this.tempoMedioPercorso = posizioneAttuale;
                         break;
- case CASAL_BERNOCCHI:                        this.capolinea = fine3;
+                    case CASAL_BERNOCCHI:                        this.capolinea = fine3;
                         this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
                         break;
-   case LIDO_DI_OSTIA:                        this.capolinea = fine4;
+                    case LIDO_DI_OSTIA:                        this.capolinea = fine4;
                         this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 2;
                         break;
-case CASTEL_FUSANO:                        this.capolinea = fine5;
+                    case CASTEL_FUSANO:                        this.capolinea = fine5;
                         this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 3;
                         break;
                 }
@@ -267,19 +267,19 @@ case CASTEL_FUSANO:                        this.capolinea = fine5;
                 break;
             case CASAL_BERNOCCHI:
                 switch (capolinea){
-          case SAN_PAOLO:                        this.capolinea = fine1;
+                    case SAN_PAOLO:                        this.capolinea = fine1;
                         this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 2;
                         break;
-      case EUR_MAGLIANA:                        this.capolinea = fine2;
+                    case EUR_MAGLIANA:                        this.capolinea = fine2;
                         this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
                         break;
- case CASAL_BERNOCCHI:                        this.capolinea = fine3;
+                    case CASAL_BERNOCCHI:                        this.capolinea = fine3;
                         this.tempoMedioPercorso = posizioneAttuale;
                         break;
-   case LIDO_DI_OSTIA:                        this.capolinea = fine4;
+                    case LIDO_DI_OSTIA:                        this.capolinea = fine4;
                         this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
                         break;
-case CASTEL_FUSANO:                        this.capolinea = fine5;
+                    case CASTEL_FUSANO:                        this.capolinea = fine5;
                         this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 2;
                         break;
                 }
@@ -287,19 +287,19 @@ case CASTEL_FUSANO:                        this.capolinea = fine5;
                 break;
             case LIDO_DI_OSTIA:
                 switch (capolinea){
-          case SAN_PAOLO:                        this.capolinea = fine1;
+                    case SAN_PAOLO:                        this.capolinea = fine1;
                         this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 3;
                         break;
-      case EUR_MAGLIANA:                        this.capolinea = fine2;
+                    case EUR_MAGLIANA:                        this.capolinea = fine2;
                         this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 2;
                         break;
- case CASAL_BERNOCCHI:                        this.capolinea = fine3;
+                    case CASAL_BERNOCCHI:                        this.capolinea = fine3;
                         this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
                         break;
-   case LIDO_DI_OSTIA:                        this.capolinea = fine4;
+                    case LIDO_DI_OSTIA:                        this.capolinea = fine4;
                         this.tempoMedioPercorso = posizioneAttuale;
                         break;
-case CASTEL_FUSANO:                        this.capolinea = fine5;
+                    case CASTEL_FUSANO:                        this.capolinea = fine5;
                         this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
                         break;
                 }
@@ -307,19 +307,19 @@ case CASTEL_FUSANO:                        this.capolinea = fine5;
                 break;
             case CASTEL_FUSANO:
                 switch (capolinea){
-          case SAN_PAOLO:                        this.capolinea = fine1;
+                    case SAN_PAOLO:                        this.capolinea = fine1;
                         this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 4;
                         break;
-      case EUR_MAGLIANA:                        this.capolinea = fine2;
+                    case EUR_MAGLIANA:                        this.capolinea = fine2;
                         this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 3;
                         break;
- case CASAL_BERNOCCHI:                        this.capolinea = fine3;
+                    case CASAL_BERNOCCHI:                        this.capolinea = fine3;
                         this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva * 2;
                         break;
-   case LIDO_DI_OSTIA:                        this.capolinea = fine4;
+                    case LIDO_DI_OSTIA:                        this.capolinea = fine4;
                         this.tempoMedioPercorso = posizioneAttuale + posizioneSuccessiva;
                         break;
-case CASTEL_FUSANO:                        this.capolinea = fine5;
+                    case CASTEL_FUSANO:                        this.capolinea = fine5;
                         this.tempoMedioPercorso = posizioneAttuale;
                         break;
                 }

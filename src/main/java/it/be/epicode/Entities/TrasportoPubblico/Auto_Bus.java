@@ -21,7 +21,7 @@ public class Auto_Bus extends Mezzo {
 
     public Auto_Bus(String partenza, String capolinea, long tempoMedioPercorso, boolean inServizio, Date dataInizioManutenzione, Date dataFineManutenzione, Date dataInizioServizio, Date dataFineServizio, String nomeVeicolo, String targa, int capienzaAttuale) {
         super(partenza, capolinea, tempoMedioPercorso, inServizio, dataInizioManutenzione, dataFineManutenzione, dataInizioServizio, dataFineServizio);
-       nomeVeicolo = this.nomeVeicolo;
+        nomeVeicolo = this.nomeVeicolo;
         targa = this.targa;
         this.capienzaAttuale = capienzaAttuale;
     }
@@ -87,28 +87,28 @@ public class Auto_Bus extends Mezzo {
         String nome = getRandomAlfabeto().toString() + randomInt;
         return nome;
     }
-public void generazioneTarga(Auto_Bus auto_bus){
+    public void generazioneTarga(Auto_Bus auto_bus){
         this.nomeVeicolo = getRandomNome();
-this.capienzaAttuale = getRandomInt();
-    int min = 100;
-    int max = 999;
-    Random random = new Random();
-    int intTarga = random.nextInt(max - min) + min;
+        this.capienzaAttuale = getRandomInt();
+        int min = 100;
+        int max = 999;
+        Random random = new Random();
+        int intTarga = random.nextInt(max - min) + min;
 
 //    String iniziale = ALFABETO.A.toString();
 //        String finale = ALFABETO.A.toString();
-    String targa = "";
-   switch (targa) {
-       case "" :
-           targa = getRandomAlfabeto().toString() + intTarga + getRandomAlfabeto().toString();
-           auto_bus.targa = targa;
-           break;
+        String targa = "";
+        switch (targa) {
+            case "" :
+                targa = getRandomAlfabeto().toString() + intTarga + getRandomAlfabeto().toString();
+                auto_bus.targa = targa;
+                break;
 //       case :
 //           break;
-   }
+        }
 
 
-}
+    }
 
 
 
@@ -144,5 +144,3 @@ this.capienzaAttuale = getRandomInt();
 //        int max = 40;
 //        Random random = new Random();
 //        int randomCapienzaAttuale = random.nextInt(max - min) + min;
-
-

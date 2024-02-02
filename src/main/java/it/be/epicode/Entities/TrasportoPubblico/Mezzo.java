@@ -4,16 +4,15 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.Date;
-import java.util.Random;
 
 @Entity
 @Table(name = "mezzo")
 @DiscriminatorValue("mezzo")
 public abstract class Mezzo extends Tratta {
 
-private boolean inServizio;
-private String mesi;
-     private Date dataInizioManutenzione;
+    private boolean inServizio;
+    private String mesi;
+    private Date dataInizioManutenzione;
 
     private Date dataFineManutenzione;
 
@@ -76,7 +75,7 @@ private String mesi;
     }
 
 
-    public void setInServizioInManutenzione(MESI mesi,int anno){
+    public void setInServizioInManutenzione(MESI mesi, int anno){
         int annoDeBug = (anno - 2000) + 100;
         int annoSeguente = annoDeBug + 1;
         int meseIM = 0;
@@ -87,18 +86,18 @@ private String mesi;
         int giornoIS = 0;
         int meseFS = 0;
         int giornoFS = 0;
-this.mesi = mesi.toString();
+        this.mesi = mesi.toString();
         switch (mesi) {
             case GENNAIO:
-      meseIM = 0;
-      giornoIM = 1;
-      meseFM = meseIM + 1;
-      giornoFM = 0;
-                 meseIS = meseFM + 1;
-                 giornoIS = 1;
-                 meseFS = meseIM ;
-                 giornoFS = 0 ;
-this.dataInizioManutenzione = new Date(annoDeBug,meseIM,giornoIM);
+                meseIM = 0;
+                giornoIM = 1;
+                meseFM = meseIM + 1;
+                giornoFM = 0;
+                meseIS = meseFM + 1;
+                giornoIS = 1;
+                meseFS = meseIM ;
+                giornoFS = 0 ;
+                this.dataInizioManutenzione = new Date(annoDeBug,meseIM,giornoIM);
                 this.dataFineManutenzione = new Date(annoDeBug,meseFM,giornoFM);
                 this.dataInizioServizio = new Date(annoDeBug,meseIS,giornoIS);
                 this.dataFineServizio = new Date(annoSeguente,meseFS,giornoFS);
@@ -116,7 +115,7 @@ this.dataInizioManutenzione = new Date(annoDeBug,meseIM,giornoIM);
                 this.dataFineManutenzione = new Date(annoDeBug,meseFM,giornoFM);
                 this.dataInizioServizio = new Date(annoDeBug,meseIS,giornoIS);
                 this.dataFineServizio = new Date(annoSeguente,meseFS,giornoFS);
-            break;
+                break;
             case MARZO:
                 meseIM = 2;
                 giornoIM = 1;
