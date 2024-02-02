@@ -4,6 +4,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.Date;
+import java.util.Random;
 
 @Entity
 @Table(name = "mezzo")
@@ -73,6 +74,7 @@ private String mesi;
     public void setDataFineServizio(Date dataFineServizio) {
         this.dataFineServizio = dataFineServizio;
     }
+
 
     public void setInServizioInManutenzione(MESI mesi,int anno){
         int annoDeBug = (anno - 2000) + 100;
@@ -257,7 +259,6 @@ this.dataInizioManutenzione = new Date(annoDeBug,meseIM,giornoIM);
                 break;
         }
     }
-
 
     @Override
     public String toString() {
